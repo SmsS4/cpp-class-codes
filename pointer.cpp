@@ -5,7 +5,16 @@ void f(int *x) {
    *x = 25; 
 }
 
+void sort(int *l, int *r) {
+}
 
+int z[10];
+
+int* g() {
+    int* t = (int*)malloc(10*sizeof(int));
+    for (int i = 0; i < 10; i++) t[i] = i*i;
+    return t;
+}
 
 int main() {
     int x = 10;
@@ -30,6 +39,26 @@ int main() {
     a[3] = 10;
     cout << (a) << '\n';
     /// a is pointer to first element of array
-    cout << a[3] << '\n' /// 10
+    cout << a[3] << '\n'; /// 10
     cout << (*(a+3)) << '\n'; /// 10
+    sort(a, a+10);
+    
+    int* int_p = &x;
+    cout << int_p << '\n';
+    cout << (int_p+1) << '\n';
+
+    bool b = false;
+    bool* bool_p = &b;
+    cout << bool_p << '\n';
+    cout << (bool_p + 1) << '\n';
+
+
+    char ch[5];
+    ch[0] = '1';
+    ch[1] = 'x';
+    ch[2] = '-';
+    cout << (ch) << '\n'; /// 1x-
+
+    int* c = g();
+    cout << (*c) << ' ' << (*(c+1)) << '\n';
 }
