@@ -11,8 +11,10 @@ struct Vector {
 
     void expand() {
         int* b = (int*)malloc(maxSize*2*sizeof(int));
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++) {
             b[i] = a[i];
+            /// *(b+i) = *(a+i)
+        }
         free(a);
         a = b;
         maxSize *= 2;
