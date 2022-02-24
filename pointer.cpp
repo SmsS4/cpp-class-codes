@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void f(int *x) {
-   *x = 25; 
+void f(int* z) {
+   *z = 25; 
 }
 
 void sort(int *l, int *r) {
@@ -12,6 +12,7 @@ int z[10];
 
 int* g() {
     int* t = (int*)malloc(10*sizeof(int));
+    char* ch = malloc(30);
     for (int i = 0; i < 10; i++) t[i] = i*i;
     return t;
 }
