@@ -88,4 +88,8 @@ int main() {
     cout << (*c) << ' ' << (*(c+1)) << '\n';
 
     printArray(a, 10);
+
+
+    int* pn = NULL;
+    pn = &x;
 }
