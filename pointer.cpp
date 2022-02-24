@@ -2,23 +2,47 @@
 using namespace std;
 
 void f(int* z) {
-   *z = 25; 
+    *z = 25; 
 }
 
-void sort(int *l, int *r) {
+void fref(int& z) {
+    z = 25;
+}
+
+void sort(int *l, int* r) {
 }
 
 int z[10];
 
 int* g() {
     int* t = (int*)malloc(10*sizeof(int));
-    char* ch = malloc(30);
     for (int i = 0; i < 10; i++) t[i] = i*i;
     return t;
 }
 
+/// O(v.size())
+void fv(vector<int> v) {
+}
+
+/// O(1)
+void fvref(vector<int> &v) {
+}
+
+/// O(1)
+void fvpnt(vector<int> *v) {
+}
+
+void printArray(int* a, int n) {
+    for (int i = 0; i < n; i++)
+        cout << a[i] << ' ';
+    cout << "\n----\n";
+}
+
 int main() {
+
     int x = 10;
+    fref(x);
+    cout << x << '\n';
     cout << "Value x: " <<  x << '\n';
     cout << "Address x: " << (&x) << '\n';
     int* p2x = &x;
@@ -43,7 +67,7 @@ int main() {
     cout << a[3] << '\n'; /// 10
     cout << (*(a+3)) << '\n'; /// 10
     sort(a, a+10);
-    
+
     int* int_p = &x;
     cout << int_p << '\n';
     cout << (int_p+1) << '\n';
@@ -62,4 +86,6 @@ int main() {
 
     int* c = g();
     cout << (*c) << ' ' << (*(c+1)) << '\n';
+
+    printArray(a, 10);
 }
